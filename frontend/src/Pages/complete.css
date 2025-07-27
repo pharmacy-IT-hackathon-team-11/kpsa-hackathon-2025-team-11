@@ -1,0 +1,60 @@
+
+/* 이 위는 삭제 */
+#complete {
+height: 100vh;
+}
+.wrap {
+width: 100vw;
+margin: 0 auto;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-bottom: 100px;
+gap: 5px;
+}
+#complete .wrap img {
+width: 150px;
+height: 150px;
+}
+
+
+h2{
+    font-weight: bold;
+    margin: 5px;
+}
+
+
+p{
+    font-weight: 400;
+}
+
+
+#complete .btn {
+width: 636px;
+display: flex;
+justify-content: space-between;
+}
+#complete .btn button {
+width: 312px;
+height: 60px;
+}
+#complete .btn .login {
+border: 0;
+background-color: #4A90E2;
+color: white;
+font-size: 16px;
+font-weight: 600;
+}
+#complete .btn .main {
+background-color: transparent;
+border: 2px solid;
+font-size: 16px;
+font-weight: 600;
+}
+
+img.check{
+    width: 50px;
+    margin-top: 30vh;
+}

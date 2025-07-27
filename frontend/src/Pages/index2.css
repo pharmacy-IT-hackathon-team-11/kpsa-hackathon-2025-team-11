@@ -1,0 +1,46 @@
+.form1 label {
+    width: 150px;
+}
+
+div.card{
+    margin-top: 10vh;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.btn-primary{
+    border: 1px solid #ccc;
+    background-color: rgba(46, 107, 193, 0.826) !important;
+}
+
+.login-setting{
+    display: flex; flex-direction: row;
+    justify-content: space-between; align-items: center;
+}
+
+.info{
+    color: rgba(46, 107, 193, 0.826);
+    font-weight: 700; font-size: larger;
+}
+
+.form1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+input{
+    margin: 0;
+}
+
+.form-label{
+    margin: 0;
+}
+
+
+input.check{
+    width: 10px;
+}
