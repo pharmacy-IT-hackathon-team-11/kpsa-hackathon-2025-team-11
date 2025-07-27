@@ -11,6 +11,7 @@ build/
 # === Environment ===
 .env
 .env.*
+*/.env
 
 # === Logs ===
 npm-debug.log*
@@ -28,3 +29,101 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# === Test & Debug Files ===
+test_*.py
+debug_*.py
+*_debug.py
+*_test.py
+test_*.json
+debug_*.json
+*_test.json
+*_debug.json
+test/
+tests/
+debug/
+__tests__/
+*.test.js
+*.test.jsx
+*.test.ts
+*.test.tsx
+*.spec.js
+*.spec.jsx
+*.spec.ts
+*.spec.tsx
+
+# === Generated Code ===
+# Build outputs
+dist/
+build/
+out/
+*.min.js
+*.min.css
+# Auto-generated files
+*_generated.*
+*.generated.*
+auto_*
+generated_*
+# Database dumps & migration files
+*.sql.backup
+*.db.backup
+migrate_*.py
+# Cache files
+*.cache
+.cache/
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+# Coverage reports
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+# Documentation builds
+docs/_build/
+site/
+
+# === Development & Debugging ===
+nohup.out
+server.log
+*.log.*
+debug.log
+error.log
+access.log
+# Development databases
+*.db
+*.sqlite
+*.sqlite3
+# API test files
+api_test_*
+test_api_*
+# Configuration backups
+*.backup
+*.bak
+config.*.backup
+
+# === Backend Directory (exclude most files except essentials) ===
+# Ignore almost everything in backend/ (non-recursive)
+backend/*
+# But keep essential files
+!backend/Dockerfile
+!backend/requirements.txt
+!backend/README.md
+!backend/schema.sql
+!backend/setup_database.sh
+!backend/setup_symptoms_analysis.sh
+!backend/run.py
+!backend/app/
+# Keep important documentation
+!backend/*README*.md
+!backend/*SUMMARY*.md
+!backend/*.sql
