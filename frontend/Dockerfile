@@ -24,7 +24,7 @@ RUN npm run build
 # Stage 2: Production image with nginx
 FROM nginx:alpine AS production
 
-# Install security updates
+# Install security updates and curl for health checks
 RUN apk update && apk upgrade && apk add --no-cache \
     curl \
     && rm -rf /var/cache/apk/*
@@ -35,18 +35,8 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Create nginx user and set permissions
-RUN addgroup -g 1001 -S nginx-group && \
-    adduser -S -D -H -u 1001 -h /var/cache/nginx -s /sbin/nologin -G nginx-group -g nginx nginx-user && \
-    chown -R nginx-user:nginx-group /usr/share/nginx/html && \
-    chown -R nginx-user:nginx-group /var/cache/nginx && \
-    chown -R nginx-user:nginx-group /var/log/nginx && \
-    chown -R nginx-user:nginx-group /etc/nginx/conf.d && \
-    touch /var/run/nginx.pid && \
-    chown -R nginx-user:nginx-group /var/run/nginx.pid
-
-# Switch to non-root user
-USER nginx-user
+# Fix permissions for nginx to run properly
+RUN chmod -R 755 /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
@@ -55,5 +45,5 @@ EXPOSE 80
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost/health || exit 1
 
-# Start nginx
+# Start nginx (run as root to avoid permission issues)
 CMD ["nginx", "-g", "daemon off;"]
