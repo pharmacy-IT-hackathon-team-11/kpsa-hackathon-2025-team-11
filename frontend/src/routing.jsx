@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import ScrollToTop from './scrollToTop'; //스크롤을 위로 올려준다.
 import App from './App';
 import Login from './Pages/Login';
-import { Helmet } from 'react-helmet';
 import Link from './Link';
 import Signup from './Pages/Signup';
 import MyPage from './Pages/MyPage';

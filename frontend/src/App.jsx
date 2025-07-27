@@ -1,7 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 
@@ -56,6 +55,11 @@ function Footer(){
 
 function App({isLoggedin, handleLoginSuccess}) {
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    document.title = 'DNAble';
+  }, []);
+  
   if (isLoggedin){
     console.log('로그인 됐어!')
   }else{
@@ -64,9 +68,6 @@ function App({isLoggedin, handleLoginSuccess}) {
 
   return (
     <>
-      <Helmet>
-        <title>DNAble</title>
-      </Helmet>
       <Page1 />
       <Page2 />
       <Page3 />

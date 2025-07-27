@@ -28,8 +28,44 @@ h1{
     display: flex; flex-direction: column;
 }
 
-.left input{
+.left input, .left select, .left textarea{
     margin: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.left select {
+    width: calc(100% - 20px);
+}
+
+.left label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.left button {
+    margin: 15px 10px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.left button:hover {
+    background-color: #0056b3;
+}
+
+.left button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }
 
 .right{
@@ -40,11 +76,13 @@ h1{
 
 .a-div{
     overflow-y: scroll;
-    width: 100px; height: 100%; width: 100%;
+    width: 100%; 
+    height: 100%;
 }
 .b-div{
     overflow-y: scroll;
-    width: 100px; height: 100%; width: 100%;
+    width: 100%; 
+    height: 100%;
 }
 
 table{
